@@ -36,7 +36,16 @@ namespace ConsoleCalc
             {
                 WriteLine($"An argument was null. {ex}");
             }
-           
+            catch (CalculationOperationNotSupportedException ex)
+            {
+                WriteLine($"CalculationOperationNotSupportedException caught '{ex.Operation}'");
+                WriteLine(ex);
+            }
+            catch (CalculationException ex)
+            {
+                WriteLine($"CalculationException caught");
+                WriteLine(ex);
+            }
             catch (Exception ex)
             {
                 WriteLine($"Sorry, something went wrong. {ex}");

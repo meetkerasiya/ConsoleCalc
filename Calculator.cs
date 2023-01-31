@@ -18,13 +18,20 @@
                 catch (DivideByZeroException ex)
                 {
                     Console.WriteLine("...logging...");
-                   
+                    
+                    throw new CalculationException(ex);
+                }
 
             }
-            
+            else
+            {
+                throw new CalculationOperationNotSupportedException(nonNullOperation);
+               
+            }
         }
 
         private int Divide(int number, int divisor) => number / divisor;
     }
 }
-}
+
+
